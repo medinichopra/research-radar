@@ -1,0 +1,5 @@
+# copy this file to config.local.yaml and fill it in
+
+research_question: >
+  Replace this with your own research question. This is what every new
+  paper gets compared against by embedding similarity and by the LLM.

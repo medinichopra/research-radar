@@ -1,5 +1,18 @@
-research_question: >
-  How and when do large language models replicate human financial decision-making,
-  and to what extent can they serve as measurement instruments (rather than trading
-  agents) for behavioral finance phenomena such as overconfidence, herding, and
-  disposition effects?
+## set the research question in config.local.yaml (see config.local.yaml.example)
+
+## quantitive finance - general, computational finance, trading and market microstructure, nlp, ai
+arxiv_categories:
+  - q-fin.GN
+  - q-fin.CP
+  - q-fin.TR
+  - cs.CL
+  - cs.AI
+
+lookback_days: 5              # looks every 5 days
+similarity_threshold: 0.45    # cosine similarity threshold to shortlist a paper
+relevance_threshold: 6        # score each paper out of 10 (create "highly relevant" section)
+max_papers_per_run: 100       # cap on raw arXiv pulls
+max_analyzed_per_run: 15      # cap on LLM calls per run
+
+embedding_model: "all-MiniLM-L6-v2"
+llm_model: "claude-sonnet-4-6"
