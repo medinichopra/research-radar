@@ -11,13 +11,10 @@ from typing import List
 
 import arxiv
 from .schema import PaperMetadata
-
 log = logging.getLogger(__name__)
 
 
-def fetch_recent_papers(
-    categories: List[str], lookback_days: int, max_results: int = 100
-) -> List[PaperMetadata]:
+def fetch_recent_papers(categories: List[str], lookback_days: int, max_results: int = 100) -> List[PaperMetadata]:
     cutoff = datetime.now(timezone.utc) - timedelta(days=lookback_days)
     query = " OR ".join(f"cat:{c}" for c in categories)
 
